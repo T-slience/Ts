@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>编号</th>
+        <th>名称</th>
+        <th>类型</th>
+        <th>发布日期</th>
+        <th>玩家数量</th>
+    </tr>
+{% block main %}
+    {% for i in a %}
+        <tr>
+            <td>{{ i.id }} </td>
+            <td>{{ i.gname }} </td>
+            <td>{{ i.get_gtype_display}} </td>
+            <td>{{ i.gpub_date }} </td>
+            <td>{{ i.gpalyer }} </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+{% block foot%}
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="切换">
+
+    </form>
+{% endblock %}
+</table>
+</body>
+</html>

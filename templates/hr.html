@@ -1,0 +1,17 @@
+{% extends 'model.html' %}
+
+{% block main %}
+ {% for i in a %}
+        <tr>
+            <td>{{ i.id }} </td>
+            <td>{{ i.hname }} </td>
+            <td>{{i.get_hgender_display}} </td>
+            <td>{{ i.hskill }} </td>
+            <td>{{ i.hgame }} </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block foot %}
+
+{% endblock %}
